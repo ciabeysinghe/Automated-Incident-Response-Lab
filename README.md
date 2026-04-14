@@ -38,13 +38,8 @@ I deployed Shuffle SOAR on the Azure VM using Docker Compose. During deployment,
 ![Shuffle App Dashboard](Assets/Image%2020.png)
 
 ### Phase 3: The SIEM-to-SOAR API Bridge
-With both platforms running, I established the webhook bridge to route alerts out of the SIEM and into the SOAR engine.
-
-1. **OSSEC Configuration:** Engineered a custom `<integration>` block within the Wazuh Manager's `ossec.conf` file, instructing the SIEM to forward Level 3+ alerts via JSON payload directly to the Shuffle Webhook URI.
+To route alerts out of the SIEM and into the SOAR engine, I engineered a custom `<integration>` block within the Wazuh Manager's `ossec.conf` file. This configuration instructed the SIEM to forward Level 3+ alerts via JSON payload directly to the Shuffle Webhook URI.
 ![Nano ossec.conf](Assets/Image%206.png)
-
-2. **API Routing Tests:** Utilized `curl` POST requests from the Linux terminal to simulate Wazuh alerts, troubleshooting JSON syntax and verifying the Shuffle Webhook was successfully catching the external data packets.
-![Curl Terminal Tests](Assets/Image%209.jpg)
 
 ### Phase 4: Payload Inspection & Logic Filtering
 A raw data pipeline generates excessive "noise" from routine OS operations. I engineered logical filters in Shuffle to isolate true security anomalies and prevent analyst alert fatigue.
