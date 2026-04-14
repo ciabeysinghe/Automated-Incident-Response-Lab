@@ -23,7 +23,7 @@ The foundation of the pipeline required standing up the SIEM and binding it to a
 ![PowerShell Agent Install](images/1%20(1).png)
 
 2. **Service Initialization:** Successfully started the Wazuh service on the target endpoint.
-![Net Start Wazuh](images/1%20(3).png)
+![Net Start Wazuh](images/1%20(2).png)
 
 3. **Telemetry Verification:** Verified the agent authenticated and registered as "Active" within the Wazuh SIEM dashboard, confirming log flow.
 ![Wazuh Active Agent Dashboard](images/1%20(4).png)
