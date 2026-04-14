@@ -1,0 +1,13 @@
+# Docker
+.env
+*.log
+docker-compose.override.yml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Credentials (CRITICAL)
+secrets.txt
+*.pem
+*.key
